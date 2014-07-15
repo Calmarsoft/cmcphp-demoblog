@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <!-- page for adding a post -->
+                
+        <meta charset="UTF-8" />
+        <title>CMC Framework blog demo</title>
+
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/flick/jquery-ui.min.css" />
+        
+        <!-- minimal for ajax (not used in skeleton): jquery+xpath+cmc -->
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> 
+        <script src="js/javascript-xpath.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script> 
+
+        <script src="js/cmc.js"></script>
+    <body>
+        
+        <!-- ONLY this part is used in final rendering, because we defined a 'parent' model (postlist.html) -->
+         <div id="container" data-cmc-parent="postlist" data-cmc-position="modelpos" data-cmc-id="addpost">
+            <div id="header">
+            </div>
+            <div id="content">
+                <h1>Add Post</h1>
+                <form>
+                    <div class="input text required">
+                        <label for="PostTitle">Title</label>
+                        <input name="title" maxlength="50" type="text" id="title" required="required"/>
+                    </div>
+                    <div class="input textarea required">
+                        <label>Body</label>
+                        <textarea name="body" rows="3" cols="30" id="body" required="required"></textarea>
+                    </div>
+                    <div class="submit">
+                        <input id="update"  type="button" value="Save Post"/>
+                    </div>
+                </form>
+            </div>
+            <div id="footer">
+            </div>
+        </div>
+    </body>
+</html>

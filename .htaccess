@@ -1,0 +1,24 @@
+
+Options -Indexes
+Options +FollowSymLinks -Multiviews
+
+
+Allow from all
+
+
+# Some classic options, with index.php as startup page
+DirectoryIndex index.php
+<IfModule mod_rewrite.c>
+    RewriteEngine On    
+
+    RewriteCond %{REQUEST_FILENAME} !(index.php/*|images/*|img/*|style/*|mp4|webm|css|js|ico|txt)
+    RewriteRule ^(.*) index.php [L]
+</IfModule>
+
+
+<FilesMatch "\.(html|css|js|jpe?g|gif|png|ico)$">
+	Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
+
+
+

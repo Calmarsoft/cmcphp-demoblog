@@ -1,0 +1,103 @@
+<html> 
+    <head>
+        <meta charset="UTF-8" />
+        <!-- note "cmc-merge" to put additional text in the title ->
+        <title class="cmc-merge"> - post detail</title>
+
+        <!-- some jquery ui styles -->
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/flick/jquery-ui.min.css" />
+        <style>
+            .ui-widget {
+                font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+                font-size: 70%;
+            }
+        </style>
+        
+        <!-- minimal for ajax (not used in skeleton): jquery+xpath+cmc -->
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> 
+        <script src="js/javascript-xpath.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script> 
+
+        <script src="js/cmc.js"></script>
+        
+        <!-- note "cmc-add" to add this part in the model -->
+        <script class="cmc-add">
+            <!--
+            // a client-side confirmation for delete button
+            var app = function() {
+                return {
+                    // client side deletion confirm
+                    confirmdel: function(event) {
+                         $("#dialog-confirm").dialog({
+                            resizable: false,
+                            height: 160,
+                            modal: true,
+                            buttons: {
+                                "Delete this post": function() {
+                                    // explicit event propagation -> continue process
+                                    cmc.eventpost(event);
+                                    $( this ).dialog( "close" );
+                                },
+                                Cancel: function() {
+                                    $( this ).dialog( "close" );                               
+                                }
+                            }
+                        });
+                    }
+                };
+            }();
+            -->
+        </script>
+
+    <body>
+         <!-- ONLY this part is used in final rendering, because we defined a 'parent' model (postlist.html) -->
+        <div id="container" data-cmc-parent="postlist" data-cmc-position="modelpos" data-cmc-id="detail">
+            <div id="header">
+            </div>
+            <!-- the "view" part -->
+            <div id="content">
+                <div id="viewarea">
+                    <h2 id="title">Post title</h2>                
+                    <div id="body">
+                        Post body<br><b>dummy post</b>
+                    </div>
+                </div>
+                
+            <!-- the "edit" part -->
+                <div id="editarea" hidden>
+                    <p>
+                    <div class="input text">
+                            <label for="PostTitle">Title</label>
+                            <input maxlength="50" type="text" id="in_title" required="required"/>
+                    </div>
+                    <div class="input textarea">
+                        <label>Body</label>
+                        <textarea rows="3" cols="30" id="in_body" required="required"></textarea>
+                    </div>
+                </div>
+                
+            </div>
+            <div id="footer">
+            </div>
+            <!-- the button array -->
+            <p>
+                <input id="delete"  type="button" value="Delete post" style="display:none"/>
+                <input id="modify"  type="button" value="Modify post" style="display:none"/>
+                
+                <input id="cancel"  type="button" value="Cancel changes" style="display:none"/>
+                <input id="save"  type="button" value="Save changes" style="display:none"/>
+
+                <input id="back"  type="button" value="Back to posts"/>
+
+            <!-- the jQuery confirm dialog -->
+            <div id="dialog-confirm" title="Delete this post?" hidden>
+                <p>
+                    <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+                    This post will permanently be deleted. Are you sure?
+                </p>
+            </div>
+
+        </div>
+        
+    </body>
+</html>
