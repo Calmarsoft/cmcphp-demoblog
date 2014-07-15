@@ -13,7 +13,7 @@ This example demonstrates the following features:
 
 This project is designed to work by just copying it into a PHP/Apache environment.
 See live skeleton result:
-http://cmc.calmarsoft.com/cmcphp/test/blog/
+http://cmc.calmarsoft.com/cmcphp/test/cmc-blog/
 
 
 Documentation
