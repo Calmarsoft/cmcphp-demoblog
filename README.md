@@ -12,7 +12,7 @@ This example demonstrates the following features:
  - asynchronous process
 
 This project is designed to work by just copying it into a PHP/Apache environment.
-See live skeleton result:
+See live result of this sample:
 http://cmc.calmarsoft.com/cmcphp/test/cmc-blog/
 
 
