@@ -81,7 +81,7 @@ class postdetailFrame extends dynframe {
 
         $r = sess()->getDataEnv()->getQueryFirst('apost', array($id));
         if (!$r)
-            $view->setRedirectBack('/postList');
+            $view->setRedirectBack('/postlist');
         //updated whenever the user owns the post
         $this->postOwner = $auth->userId() == $r['uid'];
         return $r;
@@ -128,13 +128,13 @@ class postdetailFrame extends dynframe {
             $table = dataenv()->getQueryDS('posts');
             $table->deleteData(array('id' => $id));
         }
-        $view->setRedirect('/postList');
+        $view->setRedirect('/postlist');
     }
 
     // bt_back
     public function btBack($view) {
         // set result text        
-        $view->setRedirect('/postList');
+        $view->setRedirect('/postlist');
     }
 
     // bt_upd click: switch to update mode

@@ -8,8 +8,12 @@ Allow from all
 
 # Some classic options, with index.php as startup page
 DirectoryIndex index.php
+
 <IfModule mod_rewrite.c>
     RewriteEngine On    
+
+    #required in some configurations
+    #RewriteBase /dev/samples/cmc-blog
 
     RewriteCond %{REQUEST_FILENAME} !(index.php/*|images/*|img/*|style/*|mp4|webm|css|js|ico|txt)
     RewriteRule ^(.*) index.php [L]

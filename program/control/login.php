@@ -60,7 +60,7 @@ class loginFrame extends dynframe {
         else {
             $text = \cmc\sess()->translateFmt('msgWelcome', $auth->userName());
             // redirect to main view
-            $view->setRedirectBack('/postList');
+            $view->setRedirectBack('/postlist');
         }
         // set result text
         $this->w('errortext')->setCaption($text);

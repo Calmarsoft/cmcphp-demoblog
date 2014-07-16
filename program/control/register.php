@@ -67,11 +67,11 @@ class registerFrame extends dynframe {
         else {
             $text = 'Welcome, ' . $auth->userName();
             // redirect to main view
-            $view->setRedirect('/postList', false);
+            $view->setRedirect('/postlist', false);
         }
         // set result text
         $this->w('errortext')->setCaption($text);
-        $view->setRedirectBack('/postList');
+        $view->setRedirectBack('/postlist');
     }
 
 }

@@ -56,7 +56,7 @@ class postListFrame extends dynframe {
         $logout = \cmc\sess()->getParam('logout');
         if ($logout !== null) {
             $auth->logout();
-            $view->setRedirectBack('/postList');
+            $view->setRedirectBack('/postlist');
             return;
         }   
         

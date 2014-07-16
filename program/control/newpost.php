@@ -40,7 +40,7 @@ class addpostFrame extends dynframe {
         $auth = \cmc\sess()->getUserAuth();
         // Must be connected!
         if (!$auth->is_logged()) {
-            $view->setRedirect('/postList', false);
+            $view->setRedirect('/postlist', false);
             return false;
         }
         return true;
@@ -81,7 +81,7 @@ class addpostFrame extends dynframe {
                 }
             }
         }           
-        $view->setRedirect('/postList', false);
+        $view->setRedirect('/postlist', false);
     }
 
 }
